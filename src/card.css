@@ -20,7 +20,8 @@ background-color: white;
 }
 
 .game{
-margin: auto;
+margin: 10%;
+margin-top: 5px;
 max-width: 80%;
 
 }
