@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Wendy+One');
+
+
+body {
+  background-image: url("/images/regal.png");
+
+}
+
+h1 {font-family:  'Wendy One', helvetica, sans-serif;
+font-size: 70px;
+text-align: center;
+}

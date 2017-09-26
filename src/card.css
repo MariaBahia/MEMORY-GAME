@@ -1,0 +1,26 @@
+
+
+.card {
+width: 250px;
+float: left;
+margin: auto;
+clear: right;
+
+}
+
+.card img {
+width: 200px;
+height: 200px;
+padding: 10px;
+margin: 20px 15px 15px 15px;
+border-color: darkgrey;
+border-style: double;
+align-self: center;
+background-color: white;
+}
+
+.game{
+margin: auto;
+max-width: 80%;
+
+}
