@@ -28,24 +28,16 @@ class Game extends React.Component {              // class with react libary fun
 
     setupGame = () => {
       const dupblicatedPhotos = photos.concat (photos)     // dublicate photo array = sätter ihop bilder med bilder
+      const shuffledPhotos =shuffle(dupblicatedPhotos)
+      return shuffledPhotos.map((photoUrl, index) => ({                                                         //shuffle functionality
 
-      return shuffle (                                        //random photos
-        dupblicatedPhotos.map((photoUrl, index) => {                 // iterera dupblicatedPhotos
-
-          return {
                 key: index,                                                     // card object for each photo
             src: photoUrl,
             isFlipped: false,
             isMatched: false
 
-          }
-
-      })
-    )
+          }))
     }
-
-
-
 
     render ()  {
       return (
