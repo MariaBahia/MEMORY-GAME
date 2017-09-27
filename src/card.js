@@ -28,8 +28,8 @@ class Card extends React.Component {
   // and it takes no arguments
 
 handleClick = () => {
-this.props.onClick (this.props.src)
-console.log ("ÄGD!")
+this.props.onClick (this.props.id)
+console.log ("ÄGD!" )
 
 }
 }

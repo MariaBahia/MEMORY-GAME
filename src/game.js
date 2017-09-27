@@ -4,6 +4,8 @@ import "./card.css"
 import Counter from "./counter"
 //var shuffle = require('shuffle-array')
 import shuffle from "shuffle-array"
+//const uuidv4 = require('uuid/v4');
+import uuidv4 from "uuid/v4"
 
 const photos = [                                            //array of photos
   "/images/dog1.jpeg",
@@ -20,8 +22,8 @@ class Game extends React.Component {              // class with react libary fun
 
   constructor(props)                                           //  game is initialized
   {
-    super(props)                                                    //makes sure that react compontent get initialized
-    this.state = {                                                //det som ligger i constructorn
+      super(props)                                                    //makes sure that react compontent get initialized
+      this.state = {                                                //det som ligger i constructorn
       cards: this.setupGame()                             // värdet =array cards generates cards array from photos array
     }
   }
@@ -29,29 +31,27 @@ class Game extends React.Component {              // class with react libary fun
     setupGame = () => {
       const dupblicatedPhotos = photos.concat (photos)     // dublicate photo array = sätter ihop bilder med bilder
       const shuffledPhotos =shuffle(dupblicatedPhotos)
-      return shuffledPhotos.map((photoUrl, index) => ({                                                         //shuffle functionality
-
-                key: index,                                                     // card object for each photo
-            src: photoUrl,
-            isFlipped: false,
-            isMatched: false,
+      return shuffledPhotos.map((photoUrl ) => ({                                                         //shuffle functionality
+              id:uuidv4(),
+              key: uuidv4(),                                                     // card object for each photo
+              src: photoUrl,
+              isFlipped: false,
+              isMatched: false
           }))
     }
 
 //new function which will take one argument, a "whatever"
-    handleCardClick = (whatever) => {
-alert(whatever)
+      handleCardClick = (whatever) => {
+          alert("Du har klickat > ID " +whatever)
     }
 
 
-
-
-    render ()  {
-      return (
-        <div className="game">
-        <h1> MEMORY GAME</h1>
-      {this.state.cards.map(this.renderCard)}
-        </div>
+      render ()  {
+        return (
+          <div className="game">
+          <h1> MEMORY GAME</h1>
+          {this.state.cards.map(this.renderCard)}
+          </div>
       )
     }
 
@@ -62,10 +62,12 @@ alert(whatever)
 // so it can use this.props.src
 // this will call the "onclick" function which was passed into the card
 //as a prop from the Game component
-
-      renderCard = (card) => {
-        return <
-        Card src={card.src} key={card.key} onClick={this.handleCardClick}
+// key: an unique identifier for react to use when rendering from an array
+// id: an unique identifier we can use to refer to this card later
+        renderCard = (card) => {
+          return <
+            Card src={card.src} key={card.key} id={card.id}  onClick={this.handleCardClick}
+//Card src={card.src} key={card.key} id={card.id}  onClick={this.handleCardClick}
         />
       }
 
