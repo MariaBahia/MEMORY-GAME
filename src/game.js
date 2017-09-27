@@ -15,27 +15,29 @@ const photos = [                                            //array of photos
       "/images/dog8.jpeg",
   ]
 
-class Game extends React.Component {      // class with react libary functionality
+class Game extends React.Component {              // class with react libary functionality
 
-  constructor(props)              //  game is initialized
+  constructor(props)                                           //  game is initialized
   {
-    super(props)                  //makes sure that react compontent get initialized
-    this.state = {
-      cards: this.setupGame()
+    super(props)                                                    //makes sure that react compontent get initialized
+    this.state = {                                                //det som ligger i constructorn
+      cards: this.setupGame()                             // värdet =array cards generates cards array from photos array
     }
   }
 
     setupGame = () => {
-      const dupblicatedPhotos = photos.concat (photos)
+      const dupblicatedPhotos = photos.concat (photos)     // dublicate photo array = sätter ihop bilder med bilder
 
-      return this.shuffleArray (
-        dupblicatedPhotos.map(photoUrl => {
+      return this.shuffleArray (                                        //random photos
+        dupblicatedPhotos.map((photoUrl, index) => {                 // iterera dupblicatedPhotos
 
-      return {
-        src: photoUrl,
-        isFlipped: false,
-        isMatched: false
-      } // object for each photo
+          return {
+                key: index,                                                     // card object for each photo
+            src: photoUrl,
+            isFlipped: false,
+            isMatched: false
+
+          }
 
       })
     )
@@ -52,9 +54,7 @@ class Game extends React.Component {      // class with react libary functionali
    return array;
  }
 
-    renderCard = (something) => {
-      return <Card src={something.src} />
-    }
+
     render ()  {
       return (
         <div className="game">
@@ -63,6 +63,11 @@ class Game extends React.Component {      // class with react libary functionali
         </div>
       )
     }
+
+      renderCard = (card) => {
+        return <Card src={card.src} key={card.key}/>
+      }
+
   }
 
   export default Game
