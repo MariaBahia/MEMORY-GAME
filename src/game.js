@@ -2,7 +2,8 @@ import React from "react"
 import Card from "./card"
 import "./card.css"
 import Counter from "./counter"
-
+//var shuffle = require('shuffle-array')
+import shuffle from "shuffle-array"
 
 const photos = [                                            //array of photos
   "/images/dog1.jpeg",
@@ -28,7 +29,7 @@ class Game extends React.Component {              // class with react libary fun
     setupGame = () => {
       const dupblicatedPhotos = photos.concat (photos)     // dublicate photo array = sätter ihop bilder med bilder
 
-      return this.shuffleArray (                                        //random photos
+      return shuffle (                                        //random photos
         dupblicatedPhotos.map((photoUrl, index) => {                 // iterera dupblicatedPhotos
 
           return {
@@ -43,16 +44,7 @@ class Game extends React.Component {              // class with react libary fun
     )
     }
 
-    shuffleArray(array) {
-   let i = array.length - 1;
-   for (; i > 0; i--) {
-     const j = Math.floor(Math.random() * (i + 1));
-     const temp = array[i];
-     array[i] = array[j];
-     array[j] = temp;
-   }
-   return array;
- }
+
 
 
     render ()  {
