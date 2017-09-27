@@ -38,9 +38,13 @@ class Game extends React.Component {              // class with react libary fun
           }))
     }
 
+//new function which will take one argument, a "whatever"
     handleCardClick = (whatever) => {
 alert(whatever)
     }
+
+
+
 
     render ()  {
       return (
@@ -51,12 +55,17 @@ alert(whatever)
       )
     }
 
+
+// create a new instance of the Card component. with the following props:
+// src : the url of the photo for the card
+// onClicked: a callback function which the card can invoke when it is clicked
+// so it can use this.props.src
+// this will call the "onclick" function which was passed into the card
+//as a prop from the Game component
+
       renderCard = (card) => {
         return <
-        Card
-        src={card.src}
-        key={card.key}
-        onClick={this.handleCardClick}
+        Card src={card.src} key={card.key} onClick={this.handleCardClick}
         />
       }
 
