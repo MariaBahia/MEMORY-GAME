@@ -34,9 +34,12 @@ class Game extends React.Component {              // class with react libary fun
                 key: index,                                                     // card object for each photo
             src: photoUrl,
             isFlipped: false,
-            isMatched: false
-
+            isMatched: false,
           }))
+    }
+
+    handleCardClick = (whatever) => {
+alert(whatever)
     }
 
     render ()  {
@@ -49,7 +52,12 @@ class Game extends React.Component {              // class with react libary fun
     }
 
       renderCard = (card) => {
-        return <Card src={card.src} key={card.key}/>
+        return <
+        Card
+        src={card.src}
+        key={card.key}
+        onClick={this.handleCardClick}
+        />
       }
 
   }

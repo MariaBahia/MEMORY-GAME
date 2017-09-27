@@ -19,7 +19,7 @@ class Card extends React.Component {
      // on this.props, and onClick becomes { onClick () => {}}
     return(
     <div onClick={this.handleClick} className="card" >
-<img src={this.props.src}  alt=""/>
+<img src={this.props.src} alt="hund"/>
   </div>
 )
   }
@@ -28,11 +28,11 @@ class Card extends React.Component {
   // and it takes no arguments
 
 handleClick = () => {
-console.log("ÄGD!" + this.props.src)
+this.props.onClick (this.props.src)
+console.log ("ÄGD!")
+
 }
 }
-
-
 
 // to be able to use  import card from "./card", we need to export it.
 export default Card
