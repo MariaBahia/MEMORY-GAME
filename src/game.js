@@ -66,7 +66,7 @@ class Game extends React.Component {              // class with react libary fun
 // id: an unique identifier we can use to refer to this card later
         renderCard = (card) => {
           return <
-            Card src={card.src} key={card.key} id={card.id}  onClick={this.handleCardClick}
+          Card src={card.src} key={card.key} id={card.id}  isFlipped= {card.isFlipped} onClick={this.handleCardClick}
 //Card src={card.src} key={card.key} id={card.id}  onClick={this.handleCardClick}
         />
       }

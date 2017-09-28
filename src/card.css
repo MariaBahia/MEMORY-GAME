@@ -19,6 +19,15 @@ align-self: center;
 background-color: white;
 }
 
+
+.card.flipped img {
+visibility: hidden;
+}
+
+.card.notflipped {
+img:  url("/images/hypontize.png");
+}
+
 .game{
 margin: 10%;
 margin-top: 5px;

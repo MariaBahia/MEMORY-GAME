@@ -18,19 +18,30 @@ class Card extends React.Component {
      // Props become an object so, className="foo" becomes {className : "foo"}
      // on this.props, and onClick becomes { onClick () => {}}
     return(
-    <div onClick={this.handleClick} className="card" >
-<img src={this.props.src} alt="hund"/>
-  </div>
-)
+      <div onClick={this.handleClick} className={this.setClassname()} >
+      <img src={this.props.src} alt="hund"/>
+        </div>
+            )
   }
 
   // the function we call form onClick. we give it a name "handelClick"
   // and it takes no arguments
 
-handleClick = () => {
-this.props.onClick (this.props.id)
-console.log ("ÄGD!" )
+    handleClick = () => {
+      this.props.onClick (this.props.id)
+      console.log ("ÄGD!" )
+    }
 
+    // functinto return a diffrent class name when the props "isFlipped"
+    // is true or false. it needs to return the correct value.
+    // isFlipped is a boolen which will be toggled
+    setClassname = () => {
+      if (this.props.isFlipped){
+        return ("card flipped")
+      }
+        else {
+        return ("card notflipped")
+    }
 }
 }
 
