@@ -7,9 +7,7 @@ import shuffle from "shuffle-array"
 //const uuidv4 = require('uuid/v4');
 import uuidv4 from "uuid/v4"
 
-const photos = [                                            //array of photos
-  "/images/dog1.jpeg",
-  "/images/dog2.jpeg",
+const photos = [                                            //array of photoss
   "/images/dog3.jpeg",
   "/images/dog4.jpeg",
   "/images/dog5.jpeg",
@@ -42,7 +40,8 @@ class Game extends React.Component {              // class with react libary fun
 
 //new function which will take one argument, a "whatever"
       handleCardClick = (whatever) => {
-          alert("Du har klickat > ID " +whatever)
+        console.log (whatever)
+          this.setState ({ cards: [] })
     }
 
 

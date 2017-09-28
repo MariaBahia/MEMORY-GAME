@@ -2,17 +2,18 @@
 
 .card {
 width: 250px;
+height: 200px;
 float: left;
-margin: auto;
+margin: 10px;
 clear: right;
+background-image: url("/images/hypnotize.png");
+
 
 }
 
 .card img {
-width: 200px;
+width: 250px;
 height: 200px;
-padding: 10px;
-margin: 20px 15px 15px 15px;
 border-color: darkgrey;
 border-style: double;
 align-self: center;
@@ -21,16 +22,18 @@ background-color: white;
 
 
 .card.flipped img {
-visibility: hidden;
+visibility: visible;
 }
 
-.card.notflipped {
-img:  url("/images/hypontize.png");
+.card.notflipped img{
+visibility: hidden;
+
 }
 
 .game{
 margin: 10%;
 margin-top: 5px;
+  
 max-width: 80%;
 
 }
